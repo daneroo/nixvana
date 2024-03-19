@@ -14,5 +14,6 @@ pkgs.mkShell {
     if [ -z "$(command -v pnpm)" ]; then
       npm install -g pnpm
     fi
+    echo "subproject shell activated"
   '';
 }

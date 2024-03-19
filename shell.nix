@@ -8,7 +8,8 @@ pkgs.mkShell {
      # pnpm: will be a global npm install
      deno
      bun
-     # fastfetch
+     fastfetch
+     docker-client
   ];
   shellHook = ''
     export NPM_CONFIG_PREFIX=~/.npm-global
@@ -17,5 +18,7 @@ pkgs.mkShell {
     if [ -z "$(command -v pnpm)" ]; then
       npm install -g pnpm
     fi
+    echo "top shell activated"
+    fastfetch
   '';
 }
