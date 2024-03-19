@@ -10,4 +10,12 @@ pkgs.mkShell {
      bun
      # fastfetch
   ];
+  shellHook = ''
+    export NPM_CONFIG_PREFIX=~/.npm-global
+    mkdir -p $NPM_CONFIG_PREFIX
+    export PATH="$NPM_CONFIG_PREFIX/bin:$PATH"
+    if [ -z "$(command -v pnpm)" ]; then
+      npm install -g pnpm
+    fi
+  '';
 }
