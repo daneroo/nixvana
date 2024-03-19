@@ -1,0 +1,4 @@
+{
+  "cSpell.words": ["envrc", "Nixvana", "xtruder"],
+  "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix"
+}
