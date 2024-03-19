@@ -2,29 +2,15 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/master/containers/docker-existing-dockerfile
 {
   "name": "devcontainer-project",
-  "dockerFile": "Dockerfile",
-  "context": "${localWorkspaceFolder}",
-  "build": {
-    "args": {
-      "USER_UID": "${localEnv:USER_UID}",
-      "USER_GID": "${localEnv:USER_GID}"
-    }
-  },
+  "dockerComposeFile": "compose.yml",
+  "service": "dev",
+  // might be "${localWorkspaceFolder}" instead og "/workspace"
+  "workspaceFolder": "/workspace",
 
-  // run arguments passed to docker
-  "runArgs": ["--security-opt", "label=disable"],
-
-  "containerEnv": {
-    // extensions to preload before other extensions
-    "PRELOAD_EXTENSIONS": "arrterian.nix-env-selector"
-  },
-
-  // disable command overriding and updating remote user ID
-  "overrideCommand": false,
   "userEnvProbe": "loginShell",
   "updateRemoteUserUID": false,
 
-  // build development environment on creation, make sure you already have shell.nix
+  // build development environment on creation
   "onCreateCommand": "nix-shell --command 'echo done building nix dev environment'",
 
   // Add the IDs of extensions you want installed when the container is created.
@@ -41,7 +27,6 @@
       ]
     }
   },
-
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": []
 

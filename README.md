@@ -13,8 +13,10 @@ Following instructions from `nix-devcontainer`:
 
 - minimal `shell.nix` (just echo)
 - `.envrc`: `use_nix`
-- `.devcontainer/devcontainer.json` (using Dockerfile first)
-- `Dockerfile` just extends `ghcr.io/xtruder/nix-devcontainer:v1`
+- ~~`.devcontainer/devcontainer.json` (using Dockerfile first)~~
+- `.devcontainer/devcontainer.json` (using docker compose)
+  - `Dockerfile` just extends `ghcr.io/xtruder/nix-devcontainer:v1`
+  - `compose.yml`
 - `.vscode/settings.json` add: `"nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix"`
 
 ## References
