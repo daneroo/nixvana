@@ -10,6 +10,8 @@ pkgs.mkShell {
      bun
      fastfetch
      docker-client
+     curl
+     jq
   ];
   shellHook = ''
     export NPM_CONFIG_PREFIX=~/.npm-global
