@@ -12,6 +12,7 @@ pkgs.mkShell {
      docker-client
      curl
      jq
+     tree
   ];
   shellHook = ''
     export NPM_CONFIG_PREFIX=~/.npm-global
