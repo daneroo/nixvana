@@ -5,7 +5,7 @@ pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
      # hello
      nodejs_20
-     # pnpm
+     # pnpm: will be a global npm install
      deno
      bun
      # fastfetch
