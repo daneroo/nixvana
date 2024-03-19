@@ -3,6 +3,11 @@
 pkgs.mkShell {
   # nativeBuildInputs is usually what you want -- tools you need to run
   nativeBuildInputs = with pkgs; [
-     #hello
+     # hello
+     nodejs_20
+     # pnpm
+     deno
+     bun
+     # fastfetch
   ];
 }
