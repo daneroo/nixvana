@@ -24,11 +24,21 @@
     "vscode": {
       "extensions": [
         // select nix environment
-        "arrterian.nix-env-selector"
+        "arrterian.nix-env-selector",
+        // GitHUb Copilot and GitHub Copilot Chat
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        // GitLens
+        // "eamodio.gitlens"
+        // Spell Checker
+        "streetsidesoftware.code-spell-checker",
+        // GitGraph
+        "mhutchie.git-graph",
+        // Nix IDE
+        "jnoortheen.nix-ide"
 
         // extra extensions
         //"fsevenm.run-it-on",
-        //"jnoortheen.nix-ide",
         //"ms-python.python"
       ]
     }
