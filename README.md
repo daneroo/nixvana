@@ -16,12 +16,13 @@ Following instructions from `nix-devcontainer`:
 - `.envrc`: `use_flake`
 - `.devcontainer/devcontainer.json` (using docker compose)
   - VSCode Extensions: `customizations.vscode.extensions : [...]`
-  - `Dockerfile` just extends `ghcr.io/xtruder/nix-devcontainer:v1` and delclares `VOLUME /nix`
+  - `Dockerfile` just extends `ghcr.io/xtruder/nix-devcontainer:v1` and declares `VOLUME /nix`
   - `compose.yml` - defines two services: `dev` and `docker`
 - `.vscode/settings.json` add: `"nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix"`
 
 ## References
 
+- [Multiple devcontainers](https://code.visualstudio.com/remote/advancedcontainers/configure-separate-containers)
 - [nix-direnv](https://github.com/nix-community/nix-direnv)
 - GitHub Actions
   - <https://github.com/cachix/install-nix-action>
