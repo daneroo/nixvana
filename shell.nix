@@ -7,6 +7,7 @@ pkgs.mkShell {
   ];
 
   shellHook = ''
+    nixpkgs-fmt
     fastfetch
     echo "Top shell activated"
   '';
