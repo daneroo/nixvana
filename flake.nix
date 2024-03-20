@@ -8,7 +8,7 @@
   outputs = { self, nixpkgs }: {
     devShell.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.mkShell {
       nativeBuildInputs = with nixpkgs.legacyPackages.x86_64-linux; [
-        nodejs-20_x
+        nodejs_20
         # pnpm: will be a global npm install
         deno
         bun
