@@ -21,6 +21,7 @@ Following instructions from `nix-devcontainer`:
 
 ## References
 
+- [nix-direnv](https://github.com/nix-community/nix-direnv)
 - GitHub Actions
   - <https://github.com/cachix/install-nix-action>
 - CodeSpaces
