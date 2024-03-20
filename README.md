@@ -11,10 +11,11 @@ Throwaway repo to show the way to use Nix to create a repeatable development env
 
 Following instructions from `nix-devcontainer`:
 
-- `shell.nix` (actuall dependencies
-  - npm global install in `shellHook`
-- `.envrc`: `use_nix`
+- `shell.nix` (dependencies for VSCode)
+- `flake.nix` (this will be activated by `direnv`)
+- `.envrc`: `use_flake`
 - `.devcontainer/devcontainer.json` (using docker compose)
+  - VSCode Extensions: `customizations.vscode.extensions : [...]`
   - `Dockerfile` just extends `ghcr.io/xtruder/nix-devcontainer:v1` and delclares `VOLUME /nix`
   - `compose.yml` - defines two services: `dev` and `docker`
 - `.vscode/settings.json` add: `"nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix"`
