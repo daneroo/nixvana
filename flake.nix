@@ -32,7 +32,7 @@
           npm install -g pnpm
         fi
         # Display system information on shell start
-        fastfetch
+        # fastfetch
         echo "Top flake activated"
       '';
     };

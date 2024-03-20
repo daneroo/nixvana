@@ -20,7 +20,7 @@
         if [ -z "$(command -v pnpm)" ]; then
           npm install -g pnpm
         fi
-        fastfetch
+        # fastfetch
         echo "subproject flake activated"
       '';
     };
