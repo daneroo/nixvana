@@ -1,5 +1,5 @@
 {
-  description = "My development environment";
+  description = "My subproject";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
