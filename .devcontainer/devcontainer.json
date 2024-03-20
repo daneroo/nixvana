@@ -4,14 +4,20 @@
   "name": "devcontainer-project",
   "dockerComposeFile": "compose.yml",
   "service": "dev",
-  // might be "${localWorkspaceFolder}" instead og "/workspace"
+  // might be "${localWorkspaceFolder}" instead of "/workspace"
   "workspaceFolder": "/workspace",
 
   "userEnvProbe": "loginShell",
   "updateRemoteUserUID": false,
 
+  // "remoteEnv": {
+  //   "USER_ID": "501",
+  //   "USER_GID": "501"
+  // },
   // build development environment on creation
   "onCreateCommand": "nix-shell --command 'echo done building nix dev environment'",
+  // move to flakes
+  // "onCreateCommand": "echo done building nix dev environment",
 
   // Add the IDs of extensions you want installed when the container is created.
   "customizations": {
