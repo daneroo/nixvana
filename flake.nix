@@ -6,10 +6,11 @@
   };
 
   outputs = { self, nixpkgs }: {
-    devShell.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+    devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
       nativeBuildInputs = with nixpkgs.legacyPackages.x86_64-linux; [
+        # Node.js LTS version
         nodejs_20
-        # pnpm: will be a global npm install
+        # pnpm: will be a global npm install in shellHook
         deno
         bun
         fastfetch
@@ -20,13 +21,16 @@
       ];
 
       shellHook = ''
+        # Configure npm for global installations
         export NPM_CONFIG_PREFIX=~/.npm-global
         mkdir -p $NPM_CONFIG_PREFIX
         export PATH="$NPM_CONFIG_PREFIX/bin:$PATH"
+        # Install pnpm globally if not already present
         if [ -z "$(command -v pnpm)" ]; then
           npm install -g pnpm
         fi
-        echo "top shell activated"
+        # Display system information on shell start
+        echo "Top shell activated"
         fastfetch
       '';
     };
