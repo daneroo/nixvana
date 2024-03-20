@@ -2,7 +2,7 @@ version: "3"
 services:
   dev:
     build:
-      context: ../
+      context: ../..
       dockerfile: .devcontainer/Dockerfile
       args:
         USER_UID: ${USER_UID:-1000}
@@ -11,7 +11,7 @@ services:
       DOCKER_HOST: tcp://localhost:2375
       PRELOAD_EXTENSIONS: "arrterian.nix-env-selector"
     volumes:
-      - ..:/workspace:cached
+      - ../..:/workspace:cached
       - nix:/nix
     security_opt:
       - label:disable
