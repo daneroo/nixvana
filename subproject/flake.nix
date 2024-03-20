@@ -6,7 +6,7 @@
   };
 
   outputs = { self, nixpkgs }: {
-    devShell.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+    devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
       nativeBuildInputs = with nixpkgs.legacyPackages.x86_64-linux; [
         nodejs_21
         # pnpm: will be a global npm install
