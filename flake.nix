@@ -9,7 +9,7 @@
     devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
       nativeBuildInputs = with nixpkgs.legacyPackages.x86_64-linux; [
         # Nix Formatter
-        nixpkgs-fmt
+        # nixpkgs-fmt
         # Node.js LTS version
         nodejs_20
         # pnpm: will be a global npm install in shellHook

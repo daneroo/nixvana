@@ -23,7 +23,9 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        // select nix environment
+        // Nix IDE
+        "jnoortheen.nix-ide",
+        // Nix Env Selector
         "arrterian.nix-env-selector",
         // GitHUb Copilot and GitHub Copilot Chat
         "GitHub.copilot",
@@ -34,8 +36,6 @@
         "streetsidesoftware.code-spell-checker",
         // GitGraph
         "mhutchie.git-graph",
-        // Nix IDE
-        "jnoortheen.nix-ide"
 
         // extra extensions
         //"fsevenm.run-it-on",

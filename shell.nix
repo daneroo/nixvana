@@ -2,13 +2,12 @@
 
 pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
+    # Required by Nix IDE ("jnoortheen.nix-ide") extension
     nixpkgs-fmt
-    fastfetch
-    docker-client
+    # docker-client
   ];
 
   shellHook = ''
-    fastfetch
     echo "Top shell activated"
   '';
 }
