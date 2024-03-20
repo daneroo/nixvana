@@ -2,12 +2,12 @@
 
 pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
+    nixpkgs-fmt
     fastfetch
     docker-client
   ];
 
   shellHook = ''
-    nixpkgs-fmt
     fastfetch
     echo "Top shell activated"
   '';
