@@ -7,22 +7,28 @@ Throwaway repo to show the way to use Nix to create a repeatable development env
   - CodeSpaces
   - GitHub Actions
 
+## TODO
+
+- caching ?
+- docker ?
+
 ## Devcontainer - Codespaces & MacOS (aarch64)
 
-- Starting overs with:
-  - Ubuntu jammy/22.04 + `features/nix:1` + `extraNixConfig:flakes`
+- Starting over with:
+
+  - Ubuntu jammy/22.04 + `features/nix:1` + `extraNixConfig:flakes` + `packages: ..,nixpkgs-fmt..`
   - [x] Debian bookworm/12.5
 
-- [xtruder's configs](https://github.com/xtruder/nix-devcontainer/tree/main), 
+- [xtruder's configs](https://github.com/xtruder/nix-devcontainer/tree/main),
   - `.devcontainer/xtruder` folder.
   - included `compose.yml` file to get `docker-dind` working
   - does not work on OSX (aarch64 at least)
 
-## Setup
+### Setup (xtruder)
 
 Following instructions from `nix-devcontainer`:
 
-- `shell.nix` (dependencies for VSCode)
+- `shell.nix` (dependencies for VSCode) - but now using `features:nix/packages`
 - `flake.nix` (this will be activated by `direnv`)
 - `.envrc`: `use_flake`
 - `.devcontainer/devcontainer.json` (using docker compose)
