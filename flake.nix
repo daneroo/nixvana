@@ -6,7 +6,8 @@
   };
 
   outputs = { self, nixpkgs }: let
-    sharedNativeBuildInputs = with nixpkgs.legacyPackages.x86_64-linux; [
+    mkShell = system: nixpkgs.legacyPackages.${system}.mkShell {
+      nativeBuildInputs = with nixpkgs.legacyPackages.${system}; [
         # Nix Formatter
         # nixpkgs-fmt
         # Node.js LTS version
@@ -15,13 +16,13 @@
         deno
         bun
         fastfetch
-        docker-client
+        docker
         curl
         jq
         tree
-    ];
-    
-    sharedShellHook = ''
+      ];
+
+      shellHook = ''
         # Configure npm for global installations
         export NPM_CONFIG_PREFIX=~/.npm-global
         mkdir -p $NPM_CONFIG_PREFIX
@@ -33,15 +34,10 @@
         # Display system information on shell start
         # fastfetch
         echo "Top flake activated"
-    '';
+      '';
+    };
   in {
-    devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
-      inherit sharedNativeBuildInputs;
-      shellHook = sharedShellHook;
-    };
-    devShells.aarch64-linux.default = nixpkgs.legacyPackages.aarch64-linux.mkShell {
-      inherit sharedNativeBuildInputs;
-      shellHook = sharedShellHook;
-    };
+    devShells.x86_64-linux.default = mkShell "x86_64-linux";
+    devShells.aarch64-linux.default = mkShell "aarch64-linux";
   };
 }
