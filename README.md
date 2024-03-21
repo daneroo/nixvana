@@ -7,6 +7,17 @@ Throwaway repo to show the way to use Nix to create a repeatable development env
   - CodeSpaces
   - GitHub Actions
 
+## Codespaces
+
+- Starting overs with:
+  - Ubuntu jammy/22.04 + `features/nix:1` + `extraNixConfig:flakes`
+  - Debian bookworm/12.5
+
+- [xtruder's configs](https://github.com/xtruder/nix-devcontainer/tree/main), 
+  - `.devcontainer/xtruder` folder.
+  - included `compose.yml` file to get `docker-dind` working
+  - does not work on OSX (aarch64 at least)
+
 ## Setup
 
 Following instructions from `nix-devcontainer`:
