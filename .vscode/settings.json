@@ -1,4 +1,15 @@
 {
-  "cSpell.words": ["arrterian", "envrc", "Nixvana", "xtruder"],
+  "cSpell.words": [
+    "arrterian",
+    "eamodio",
+    "envrc",
+    "fastfetch",
+    "fsevenm",
+    "jnoortheen",
+    "mhutchie",
+    "nixpkgs",
+    "Nixvana",
+    "xtruder"
+  ],
   "nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix"
 }

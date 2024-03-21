@@ -11,7 +11,7 @@
       "extraNixConfig": "experimental-features = nix-command flakes",
       "packages":"fastfetch, direnv, nixpkgs-fmt"
     }
-  }
+  },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
@@ -19,8 +19,30 @@
   // Use 'postCreateCommand' to run commands after the container is created.
   // "postCreateCommand": "uname -a",
 
-  // Configure tool-specific properties.
-  // "customizations": {},
+  // Add the IDs of extensions you want installed when the container is created.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Nix IDE
+        "jnoortheen.nix-ide",
+        // Nix Env Selector
+        "arrterian.nix-env-selector",
+        // GitHUb Copilot and GitHub Copilot Chat
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        // GitLens
+        // "eamodio.gitlens"
+        // Spell Checker
+        "streetsidesoftware.code-spell-checker",
+        // GitGraph
+        "mhutchie.git-graph"
+
+        // extra extensions
+        //"fsevenm.run-it-on",
+        //"ms-python.python"
+      ]
+    }
+  }
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"

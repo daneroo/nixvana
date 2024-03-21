@@ -35,7 +35,7 @@
         // Spell Checker
         "streetsidesoftware.code-spell-checker",
         // GitGraph
-        "mhutchie.git-graph",
+        "mhutchie.git-graph"
 
         // extra extensions
         //"fsevenm.run-it-on",
