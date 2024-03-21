@@ -9,7 +9,7 @@
     "ghcr.io/devcontainers/features/nix:1": {
       "version": "latest",
       "extraNixConfig": "experimental-features = nix-command flakes",
-      "packages":"fastfetch, direnv, nixpkgs-fmt"
+      "packages": "fastfetch, direnv, nixpkgs-fmt"
     }
   },
 
@@ -32,6 +32,8 @@
         "GitHub.copilot-chat",
         // GitLens
         // "eamodio.gitlens"
+        // Prettier
+        "esbenp.prettier-vscode",
         // Spell Checker
         "streetsidesoftware.code-spell-checker",
         // GitGraph
