@@ -7,11 +7,11 @@ Throwaway repo to show the way to use Nix to create a repeatable development env
   - CodeSpaces
   - GitHub Actions
 
-## Codespaces
+## Devcontainer - Codespaces & MacOS (aarch64)
 
 - Starting overs with:
   - Ubuntu jammy/22.04 + `features/nix:1` + `extraNixConfig:flakes`
-  - Debian bookworm/12.5
+  - [x] Debian bookworm/12.5
 
 - [xtruder's configs](https://github.com/xtruder/nix-devcontainer/tree/main), 
   - `.devcontainer/xtruder` folder.
