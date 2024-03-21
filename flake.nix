@@ -5,9 +5,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
-  outputs = { self, nixpkgs }: {
-    devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
-      nativeBuildInputs = with nixpkgs.legacyPackages.x86_64-linux; [
+  outputs = { self, nixpkgs }: let
+    sharedNativeBuildInputs = with nixpkgs.legacyPackages.x86_64-linux; [
         # Nix Formatter
         # nixpkgs-fmt
         # Node.js LTS version
@@ -20,9 +19,9 @@
         curl
         jq
         tree
-      ];
-
-      shellHook = ''
+    ];
+    
+    sharedShellHook = ''
         # Configure npm for global installations
         export NPM_CONFIG_PREFIX=~/.npm-global
         mkdir -p $NPM_CONFIG_PREFIX
@@ -34,7 +33,15 @@
         # Display system information on shell start
         # fastfetch
         echo "Top flake activated"
-      '';
+    '';
+  in {
+    devShells.x86_64-linux.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+      inherit sharedNativeBuildInputs;
+      shellHook = sharedShellHook;
+    };
+    devShells.aarch64-linux.default = nixpkgs.legacyPackages.aarch64-linux.mkShell {
+      inherit sharedNativeBuildInputs;
+      shellHook = sharedShellHook;
     };
   };
 }
