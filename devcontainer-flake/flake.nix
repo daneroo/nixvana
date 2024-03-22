@@ -7,8 +7,8 @@
 
   outputs = { self, nixpkgs }:
     let
-      mkShell = system: nixpkgs.legacyPackages.${system}.mkShell {
-        nativeBuildInputs = with nixpkgs.legacyPackages.${system}; [
+      mkProfile = system: nixpkgs.legacyPackages.${system}.mkShell {
+        buildInputs = with nixpkgs.legacyPackages.${system}; [
           # Nix Formatter
           nixpkgs-fmt
           direnv
@@ -16,12 +16,12 @@
         ];
 
         shellHook = ''
-          echo "Devcontainer flake activated"
+          echo "Devcontainer flake profile activated"
         '';
       };
     in
     {
-      devShells.x86_64-linux.default = mkShell "x86_64-linux";
-      devShells.aarch64-linux.default = mkShell "aarch64-linux";
+      packages.x86_64-linux.default = mkProfile "x86_64-linux";
+      packages.aarch64-linux.default = mkProfile "aarch64-linux";
     };
 }
