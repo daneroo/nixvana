@@ -18,7 +18,7 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "./.devcontainer/common/post-create-command.sh",
+  "postCreateCommand": "./.devcontainer/post-create-command.sh",
 
   // Add the IDs of extensions you want installed when the container is created.
   "customizations": {

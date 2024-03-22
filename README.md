@@ -12,18 +12,30 @@ Throwaway repo to show the way to use Nix to create a repeatable development env
 - home manager
 - caching:
 - [x] docker is a feature
-- remove xtruder and ubuntu
 - coordinate the list of VSCode extensions and their dependencies
 
-## Devcontainer - Codespaces (x86_64) & MacOS (aarch64)
+## Setup
 
-- features:ghcr.io/devcontainers/features/nix:1:{flakes,packages:fastfetch,direnv,nixpkgs-fmt}
-  - [x] Ubuntu jammy/22.04 + `features/nix:1` + `extraNixConfig:flakes` + `packages: ..,nixpkgs-fmt..`
-  - [x] Debian bookworm/12.5 + `features/nix:1` + `extraNixConfig:flakes` + `packages: ..,nixpkgs-fmt..`
-- [xtruder's configs](https://github.com/xtruder/nix-devcontainer/tree/main),
-  - `.devcontainer/xtruder` folder.
-  - included `compose.yml` file to get `docker-dind` working
-  - does not work on OSX (aarch64 at least)
+### Devcontainer - Codespaces (x86_64) & MacOS (aarch64)
+
+We are not using a custom Dockerfile setup, we are only using the `devcontainer.json` file.
+
+- Debian (bookworm/12.5) base image
+- features
+  - ghcr.io/devcontainers/features/nix:1 enable flakes, install packages: direnv, nixpkgs-fmt
+  - ghcr.io/devcontainers/features/docker-in-docker:2
+- customizations.vscode.extensions: Nix IDE, Copilot,..
+
+The packages specified in the `nix` feature, are only those required by our extensions and `direnv`.
+They show up in `nix profile list`.
+
+For our other dependencies, we use `flake.nix`, and our `direnv` setup with `.envrc` files in any directory (including the root of the repo).
+
+Our [postCreateCommand](./.devcontainer/post-create-command.sh) script will install the `direnv` hook in our `~/.bashrc` as well as a `~/.config/direnv/direnv.toml` file.
+
+We can see for example that the `subproject/` folder has it's own [`.envrc`](./subproject/.envrc) file, and it's own [`flake.nix`](./subproject/flake.nix) file.
+
+We can also use the `nix-shell` command to enter a shell with the it's [`shell.nix`](./shell.nix) file.
 
 ### Setup (xtruder)
 
