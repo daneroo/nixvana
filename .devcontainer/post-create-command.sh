@@ -9,6 +9,7 @@ cat << EOF > ~/.config/direnv/direnv.toml
 # increase warn timeout to 30 minutes
 warn_timeout = "30m"
 
+# why is this pointing to the base image's bash?
 bash_path = "/bin/bash"
 
 # whitelist all paths for container environment
