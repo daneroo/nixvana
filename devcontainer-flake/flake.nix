@@ -13,6 +13,7 @@
           nixpkgs-fmt
           direnv
           fastfetch
+          hello
         ];
 
         shellHook = ''
