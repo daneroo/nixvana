@@ -21,8 +21,4 @@ EOF
 echo "Adding direnv hook to .bashrc..."
 echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 
-echo "PWD: $PWD"
-echo "Activating top level flake."
-nix develop
-
 echo "Post-create command complete in Debian-Nix."

@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-  "name": "Ubuntu-Nix-Profile-Direnv",
+  "name": "Ubuntu-Nix",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/base:jammy",
   // Features to add to the dev container. More info: https://containers.dev/features.
@@ -9,7 +9,7 @@
     "ghcr.io/devcontainers/features/nix:1": {
       "version": "latest",
       "extraNixConfig": "experimental-features = nix-command flakes",
-      "packages": "fastfetch, direnv, nixpkgs-fmt"
+      "packages": "direnv, nixpkgs-fmt"
     }
   },
 
@@ -17,7 +17,7 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "./.devcontainer/ubuntu-nix-profile-direnv/post-create-command.sh",
+  "postCreateCommand": "./.devcontainer/common/post-create-command.sh",
 
   // Add the IDs of extensions you want installed when the container is created.
   "customizations": {

@@ -8,9 +8,8 @@
   "features": {
     "ghcr.io/devcontainers/features/nix:1": {
       "version": "latest",
-      // "flakeUri": "nixpkgs#direnv"
-      "extraNixConfig": "experimental-features = nix-command flakes"
-      // "packages": "fastfetch, direnv, nixpkgs-fmt"
+      "extraNixConfig": "experimental-features = nix-command flakes",
+      "packages": "direnv, nixpkgs-fmt"
     }
   },
 
@@ -18,7 +17,7 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "./.devcontainer/post-create-command.sh",
+  "postCreateCommand": "./.devcontainer/common/post-create-command.sh",
 
   // Add the IDs of extensions you want installed when the container is created.
   "customizations": {
