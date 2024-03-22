@@ -17,11 +17,9 @@ Throwaway repo to show the way to use Nix to create a repeatable development env
 
 ## Devcontainer - Codespaces & MacOS (aarch64)
 
-- Starting over with:
-
-  - Ubuntu jammy/22.04 + `features/nix:1` + `extraNixConfig:flakes` + `packages: ..,nixpkgs-fmt..`
-  - [x] Debian bookworm/12.5
-
+- features:ghcr.io/devcontainers/features/nix:1:{flakes,packages:fastfetch,direnv,nixpkgs-fmt}
+  - [x] Ubuntu jammy/22.04 + `features/nix:1` + `extraNixConfig:flakes` + `packages: ..,nixpkgs-fmt..`
+  - [x] Debian bookworm/12.5 + `features/nix:1` + `extraNixConfig:flakes` + `packages: ..,nixpkgs-fmt..`
 - [xtruder's configs](https://github.com/xtruder/nix-devcontainer/tree/main),
   - `.devcontainer/xtruder` folder.
   - included `compose.yml` file to get `docker-dind` working
@@ -42,6 +40,7 @@ Following instructions from `nix-devcontainer`:
 
 ## References
 
+- [Devcontainer feature:nix](https://github.com/devcontainers/features/blob/main/src/nix/README.md)
 - [Multiple devcontainers](https://code.visualstudio.com/remote/advancedcontainers/configure-separate-containers)
 - [nix-direnv](https://github.com/nix-community/nix-direnv)
 - GitHub Actions
