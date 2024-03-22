@@ -18,7 +18,7 @@
           deno
           bun
           fastfetch
-          docker
+          # docker-client
           curl
           jq
           tree
