@@ -9,13 +9,13 @@ Throwaway repo to show the way to use Nix to create a repeatable development env
 
 ## TODO
 
-- feature/nix flakeUri: Optional URI to a Nix Flake to install in profile.
 - home manager
-- caching: separate docker compose volume? https://cache.nixos.org vs cachix?
-- docker: will require compose.yml
+- caching:
+- [x] docker is a feature
+- remove xtruder and ubuntu
 - coordinate the list of VSCode extensions and their dependencies
 
-## Devcontainer - Codespaces & MacOS (aarch64)
+## Devcontainer - Codespaces (x86_64) & MacOS (aarch64)
 
 - features:ghcr.io/devcontainers/features/nix:1:{flakes,packages:fastfetch,direnv,nixpkgs-fmt}
   - [x] Ubuntu jammy/22.04 + `features/nix:1` + `extraNixConfig:flakes` + `packages: ..,nixpkgs-fmt..`
