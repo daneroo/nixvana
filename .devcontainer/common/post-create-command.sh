@@ -21,4 +21,4 @@ EOF
 echo "Adding direnv hook to .bashrc..."
 echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 
-echo "Post-create command complete in Debian-Nix."
+echo "Post-create command complete in devcontainer"
