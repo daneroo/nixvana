@@ -11,9 +11,9 @@ Throwaway repo to show the way to use Nix to create a repeatable development env
 
 - feature/nix flakeUri: Optional URI to a Nix Flake to install in profile.
 - home manager
-- caching: separate docker compose volume?
-- docker: willrequire compose.yml
-- coordinate the list of VSCode exensions and their dependencies
+- caching: separate docker compose volume? https://cache.nixos.org vs cachix?
+- docker: will require compose.yml
+- coordinate the list of VSCode extensions and their dependencies
 
 ## Devcontainer - Codespaces & MacOS (aarch64)
 
