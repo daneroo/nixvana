@@ -8,8 +8,9 @@
   "features": {
     "ghcr.io/devcontainers/features/nix:1": {
       "version": "latest",
-      "extraNixConfig": "experimental-features = nix-command flakes",
-      "packages": "fastfetch, direnv, nixpkgs-fmt"
+      // "flakeUri": "nixpkgs#direnv"
+      "extraNixConfig": "experimental-features = nix-command flakes"
+      // "packages": "fastfetch, direnv, nixpkgs-fmt"
     }
   },
 

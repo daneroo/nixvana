@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# Configure global direnv settings - to allow all .envrc in our container
+# Configure user direnv settings - to allow all .envrc in our container
+echo "Configuring user direnv settings..."
 mkdir -p ~/.config/direnv
 cat << EOF > ~/.config/direnv/direnv.toml
 # direnv user config
@@ -17,8 +18,11 @@ bash_path = "/bin/bash"
 prefix = [ "/" ]
 EOF
 
-# add direnv hook to .bashrc
+echo "Adding direnv hook to .bashrc..."
 echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 
+echo "PWD: $PWD"
+echo "Activating top level flake."
+nix develop
 
 echo "Post-create command complete in Debian-Nix."
