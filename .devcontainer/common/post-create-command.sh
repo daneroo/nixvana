@@ -21,4 +21,6 @@ EOF
 echo "Adding direnv hook to .bashrc..."
 echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 
+echo "Nix Store size: $(du -sh /nix/store)"
+
 echo "Post-create command complete in devcontainer"
