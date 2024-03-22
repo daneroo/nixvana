@@ -9,8 +9,9 @@
     let
       mkShell = system: nixpkgs.legacyPackages.${system}.mkShell {
         nativeBuildInputs = with nixpkgs.legacyPackages.${system}; [
+          direnv
           # Nix Formatter
-          # nixpkgs-fmt
+          nixpkgs-fmt
           # Node.js LTS version
           nodejs_20
           # pnpm: will be a global npm install in shellHook
