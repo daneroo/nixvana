@@ -3,7 +3,7 @@ services:
   dev:
     build:
       context: ../..
-      dockerfile: .devcontainer/Dockerfile
+      dockerfile: .devcontainer/xtruder/Dockerfile
       args:
         USER_UID: ${USER_UID:-1000}
         USER_GID: ${USER_GID:-1000}
