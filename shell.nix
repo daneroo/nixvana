@@ -5,7 +5,7 @@ pkgs.mkShell {
     # Required by Nix IDE ("jnoortheen.nix-ide") extension
     # nixpkgs-fmt
     # docker-client
-    fastfetch
+    hello
   ];
 
   shellHook = ''

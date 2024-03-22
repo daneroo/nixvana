@@ -9,9 +9,9 @@ Throwaway repo to show the way to use Nix to create a repeatable development env
 
 ## TODO
 
-- home manager
-- caching:
-- [x] docker is a feature
+- GitHub Actions
+- home manager: not sure it's possible to use it in a devcontainer
+- caching for nix
 - coordinate the list of VSCode extensions and their dependencies
 
 ## Setup
@@ -35,20 +35,7 @@ Our [postCreateCommand](./.devcontainer/post-create-command.sh) script will inst
 
 We can see for example that the `subproject/` folder has it's own [`.envrc`](./subproject/.envrc) file, and it's own [`flake.nix`](./subproject/flake.nix) file.
 
-We can also use the `nix-shell` command to enter a shell with the it's [`shell.nix`](./shell.nix) file.
-
-### Setup (xtruder)
-
-Following instructions from `nix-devcontainer`:
-
-- `shell.nix` (dependencies for VSCode) - but now using `features:nix/packages`
-- `flake.nix` (this will be activated by `direnv`)
-- `.envrc`: `use_flake`
-- `.devcontainer/devcontainer.json` (using docker compose)
-  - VSCode Extensions: `customizations.vscode.extensions : [...]`
-  - `Dockerfile` just extends `ghcr.io/xtruder/nix-devcontainer:v1` and declares `VOLUME /nix`
-  - `compose.yml` - defines two services: `dev` and `docker`
-- `.vscode/settings.json` add: `"nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix"`
+We can also use the non-flake `nix-shell` command to enter a shell with the it's [`shell.nix`](./shell.nix) file.
 
 ## References
 
@@ -57,7 +44,7 @@ Following instructions from `nix-devcontainer`:
 - [nix-direnv](https://github.com/nix-community/nix-direnv)
 - GitHub Actions
   - <https://github.com/cachix/install-nix-action>
-- CodeSpaces
+- XTruder repo and examples
   - <https://github.com/xtruder/nix-devcontainer>
     - <https://github.com/xtruder/nix-devcontainer-golang>
     - <https://github.com/xtruder/nix-devcontainer-python-jupyter>
