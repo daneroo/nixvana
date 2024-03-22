@@ -21,4 +21,4 @@ EOF
 echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 
 
-echo "Post-create command complete in Top-Level-Devcontainer-Config."
+echo "Post-create command complete in ubuntu-nix-profile-direnv."

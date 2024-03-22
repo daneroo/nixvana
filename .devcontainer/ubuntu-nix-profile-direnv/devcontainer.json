@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-  "name": "Top-Level-Devcontainer-Config",
+  "name": "Ubuntu-Nix-Profile-Direnv",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/base:jammy",
   // Features to add to the dev container. More info: https://containers.dev/features.
@@ -17,7 +17,7 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "./.devcontainer/post-create-command.sh",
+  "postCreateCommand": "./.devcontainer/ubuntu-nix-profile-direnv/post-create-command.sh",
 
   // Add the IDs of extensions you want installed when the container is created.
   "customizations": {
