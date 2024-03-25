@@ -26,7 +26,7 @@ We are not using a custom Dockerfile setup, we are only using the `devcontainer.
   - ghcr.io/devcontainers/features/docker-in-docker:2
 - customizations.vscode.extensions: Nix IDE, Copilot,..
 
-The packages specified in the `nix` feature, are only those required by our extensions and `direnv`.
+The packages specified in the `nix` feature, are only those required by our VSCode extensions and `direnv`.
 They show up in `nix profile list`.
 
 For our other dependencies, we use `flake.nix`, and our `direnv` setup with `.envrc` files in any directory (including the root of the repo).
