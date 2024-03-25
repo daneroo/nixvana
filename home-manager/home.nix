@@ -19,14 +19,15 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/direnv/direnv.toml".source = dotfiles/direnv.toml;
-    ".config/starship.toml".source = dotfiles/starship.toml;
-
+    # The config files were moved to the xdg.configFile option.
+    # ".config/direnv/direnv.toml".source = dotfiles/direnv.toml;
+    # ".config/starship.toml".source = dotfiles/starship.toml;
     # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    # ".config/yourthing.json".text = ''...'';
+  };
+  xdg.configFile = {
+    "direnv/direnv.toml".source = ./dotfiles/direnv.toml;
+    "starship.toml".source = ./dotfiles/starship.toml;
   };
 
   # Home Manager can also manage your environment variables through
@@ -47,9 +48,6 @@
       enable = true;
       enableBashIntegration = true; # see note on other shells below
       nix-direnv.enable = true;
-      # settings = {
-      #   allowUntrusted = true;
-      # };
     };
     starship = {
       enable = true;
