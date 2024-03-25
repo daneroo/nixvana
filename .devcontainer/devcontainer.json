@@ -9,7 +9,8 @@
     "ghcr.io/devcontainers/features/nix:1": {
       "version": "latest",
       "extraNixConfig": "experimental-features = nix-command flakes",
-      "packages": "direnv, nixpkgs-fmt"
+      // "packages": "direnv, nixpkgs-fmt"
+      "packages": "hello"
     },
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
@@ -18,7 +19,9 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "./.devcontainer/post-create-command.sh",
+  // "postCreateCommand": "./.devcontainer/post-create-command.sh",
+  // or our home manager setup
+  "postCreateCommand": "./.devcontainer/setup-home-manager.sh",
 
   // Add the IDs of extensions you want installed when the container is created.
   "customizations": {

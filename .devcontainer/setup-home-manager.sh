@@ -15,8 +15,12 @@ nix-channel --update
 nix-shell '<home-manager>' -A install
 
 echo "Debug PWD: $(pwd)"
+
 # copy the home.nix file to the user's home directory
 cp ./home-manager/home.nix /home/vscode/.config/home-manager/home.nix
+# and it's dotfiles (like direnv.toml)
+mkdir -p /home/vscode/.config/home-manager/dotfiles
+cp -r ./home-manager/dotfiles/. /home/vscode/.config/home-manager/dotfiles
 # home-manager switch
 home-manager switch -b backup
 
