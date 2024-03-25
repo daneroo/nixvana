@@ -20,6 +20,7 @@
   # plain files is through 'home.file'.
   home.file = {
     ".config/direnv/direnv.toml".source = dotfiles/direnv.toml;
+    ".config/starship.toml".source = dotfiles/starship.toml;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -38,15 +39,20 @@
     home-manager = {
       enable = true;
     };
+    bash = {
+      enable = true; # see note on other shells below
+      enableCompletion = true;
+    };
     direnv = {
       enable = true;
       enableBashIntegration = true; # see note on other shells below
       nix-direnv.enable = true;
+      # settings = {
+      #   allowUntrusted = true;
+      # };
     };
-
-    bash = {
-      enable = true; # see note on other shells below
-      enableCompletion = true;
+    starship = {
+      enable = true;
     };
 
   };
