@@ -4,15 +4,18 @@
 # TODO(daneroo): This is a work in progress, and is meant to replatce the post-create-command.sh
 ###
 
-# Configure home manager channel - unstable
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-# Configure home manager channel - 23.11 release
-# nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
-# Now updte the channel
-nix-channel --update
+# Install home manager from nixpkgs
+nix-env -iA nixpkgs.home-manager
 
-# Install home manager
-nix-shell '<home-manager>' -A install
+# # Configure home manager channel - unstable
+# nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+# # Configure home manager channel - 23.11 release
+# # nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
+# # Now updte the channel
+# nix-channel --update
+
+# # Install home manager
+# nix-shell '<home-manager>' -A install
 
 echo "Debug PWD: $(pwd)"
 
