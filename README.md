@@ -10,7 +10,10 @@ Throwaway repo to show the way to use Nix to create a repeatable development env
 ## TODO
 
 - GitHub Actions
-- home manager: not sure it's possible to use it in a devcontainer
+- home manager
+  - Not working on Codespaces
+  - sets up bash, direnv, and starship
+  - install home-manager from `nix-env -iA nixpkgs.home-manager` not a home-manager channel
 - caching for nix
 - coordinate the list of VSCode extensions and their dependencies
 

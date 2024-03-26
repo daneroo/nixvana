@@ -19,13 +19,13 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    # The config files were moved to the xdg.configFile option.
+    # The config files for direnv and starship were moved to the xdg.configFile option.
     # ".config/direnv/direnv.toml".source = dotfiles/direnv.toml;
     # ".config/starship.toml".source = dotfiles/starship.toml;
     # # You can also set the file content immediately.
     # ".config/yourthing.json".text = ''...'';
   };
-  
+
   xdg.configFile = {
     "direnv/direnv.toml".source = ./dotfiles/direnv.toml;
     "starship.toml".source = ./dotfiles/starship.toml;
