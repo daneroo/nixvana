@@ -25,6 +25,7 @@
     # # You can also set the file content immediately.
     # ".config/yourthing.json".text = ''...'';
   };
+  
   xdg.configFile = {
     "direnv/direnv.toml".source = ./dotfiles/direnv.toml;
     "starship.toml".source = ./dotfiles/starship.toml;
@@ -35,11 +36,11 @@
     # EDITOR = "emacs";
   };
 
-  # Let Home Manager install and manage itself.
+  # Let Home Manager install and NOT manage itself.
   programs = {
-    home-manager = {
-      enable = true;
-    };
+    # home-manager = {
+    #   enable = true;
+    # };
     bash = {
       enable = true; # see note on other shells below
       enableCompletion = true;
