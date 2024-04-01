@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
 
-### START OF DETERMINATE SYSTEMS NIX INSTALLER PART ###
+# From https://github.com/NixOS/nix/issues/6680#issuecomment-1230902525
+# This fixes "suspicious permissions problems" in my nix derivations, however
+#  getfacl /tmp ; before and after reveals no differences
+echo "Setting up ACLs on /tmp"
+sudo apt update && sudo apt install -y acl && sudo setfacl -k /tmp
 
+### START OF DETERMINATE SYSTEMS NIX INSTALLER PART ###
 echo "Determinate Systems Nix installer - no init - (as $(whoami))"
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux --no-confirm --init none
 
