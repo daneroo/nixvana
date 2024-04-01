@@ -9,6 +9,8 @@ Throwaway repo to show the way to use Nix to create a repeatable development env
 
 ## TODO
 
+- [x] swap feature `nix` for determinate installer
+- convert home-manager install to flake (install)
 - GitHub Actions
 - home manager
   - Not working on Codespaces

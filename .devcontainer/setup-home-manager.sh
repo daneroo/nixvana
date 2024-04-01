@@ -1,5 +1,33 @@
 #!/usr/bin/env bash
 
+
+### START OF DETERMINATE SYSTEMS NIX INSTALLER PART ###
+
+echo "Determinate Systems Nix installer - no init - (as $(whoami))"
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux --no-confirm --init none
+
+echo "Source the nix-daemon profile"
+. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+
+echo "start nix-daemon (disown/nuhup)"
+# Notice the '&' to background the process and 'nohup' to prevent the process from being killed when the shell exits
+sudo -n sh -c '. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh; nohup /nix/var/nix/profiles/default/bin/nix-daemon > /tmp/nix-daemon.log 2>&1 &'
+
+echo "Sleep a bit to let the daemon start"
+sleep 1
+
+echo "Proving the nix-daemon is running"
+pidof nix-daemon >/tmp/nix-daemon-pid.log
+
+echo "add a default channel (as $(whoami))"
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+nix-channel --update
+echo "List channels:"
+nix-channel --list
+
+### END OF DETERMINATE SYSTEMS NIX INSTALLER PART ###
+
+
 # Install home manager from nixpkgs
 nix-env -iA nixpkgs.home-manager
 
