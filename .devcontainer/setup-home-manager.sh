@@ -5,7 +5,6 @@
 # This fixes "suspicious permissions problems" in my nix derivations, however
 #  getfacl /tmp ; before and after reveals no differences
 echo "Setting up ACLs on /tmp"
-# sudo apt update && sudo apt install -y acl && sudo setfacl -k /tmp
 sudo sh -c 'apt update && apt install -y acl && setfacl -k /tmp'
 
 
@@ -19,9 +18,6 @@ echo "Source the nix-daemon profile"
 echo "start nix-daemon (disown/nuhup)"
 # Notice the '&' to background the process and 'nohup' to prevent the process from being killed when the shell exits
 sudo -n sh -c '. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh; nohup /nix/var/nix/profiles/default/bin/nix-daemon > /tmp/nix-daemon.log 2>&1 &'
-
-echo "Sleep a bit to let the daemon start"
-sleep 1
 
 echo "Proving the nix-daemon is running"
 pidof nix-daemon >/tmp/nix-daemon-pid.log
