@@ -22,7 +22,7 @@
   // Use 'postCreateCommand' to run commands after the container is created.
   // "postCreateCommand": "./.devcontainer/post-create-command.sh",
   // or our home manager setup
-  "postCreateCommand": "./.devcontainer/setup-home-manager.sh",
+  "postCreateCommand": "./.devcontainer/post-create-command.sh",
 
   // Add the IDs of extensions you want installed when the container is created.
   "customizations": {
