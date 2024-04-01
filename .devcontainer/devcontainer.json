@@ -6,13 +6,13 @@
   "image": "mcr.microsoft.com/devcontainers/base:bookworm",
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    // using determinate installer instead of this feature
-    // "ghcr.io/devcontainers/features/nix:1": {
-    //   "version": "latest",
-    //   "extraNixConfig": "experimental-features = nix-command flakes",
-    //   // "packages": "direnv, nixpkgs-fmt"
-    //   "packages": "hello"
-    // },
+    // If the nix feature is not selected, the Determinate Installation will be used in postCreateCommand
+    "ghcr.io/devcontainers/features/nix:1": {
+      "version": "latest",
+      "extraNixConfig": "experimental-features = nix-command flakes",
+      // "packages": "direnv, nixpkgs-fmt"
+      "packages": "hello"
+    },
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
 
