@@ -7,8 +7,6 @@
 echo "Setting up ACLs on /tmp"
 sudo sh -c 'apt update -qq && apt install -y -qq acl && setfacl -k /tmp'
 
-
-
 # Use Determinate installer to install Nix, if not already installed
 if command -v nix >/dev/null 2>&1; then
   echo "Nix is already installed, skipping Determinate installation"
@@ -36,15 +34,8 @@ else
 fi
 # End of Determinate installer section
 
-
-
-
-
 # Install home manager from nixpkgs
 nix-env -iA nixpkgs.home-manager
-
-
-echo "Debug PWD: $(pwd)"
 
 # copy the home-manager configuration to the user's home directory
 rsync -av --progress ./home-manager/ $HOME/.config/home-manager/
