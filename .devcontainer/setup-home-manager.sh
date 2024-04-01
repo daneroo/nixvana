@@ -5,7 +5,9 @@
 # This fixes "suspicious permissions problems" in my nix derivations, however
 #  getfacl /tmp ; before and after reveals no differences
 echo "Setting up ACLs on /tmp"
-sudo apt update && sudo apt install -y acl && sudo setfacl -k /tmp
+# sudo apt update && sudo apt install -y acl && sudo setfacl -k /tmp
+sudo sh -c 'apt update && apt install -y acl && setfacl -k /tmp'
+
 
 ### START OF DETERMINATE SYSTEMS NIX INSTALLER PART ###
 echo "Determinate Systems Nix installer - no init - (as $(whoami))"
