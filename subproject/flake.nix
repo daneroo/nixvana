@@ -9,7 +9,7 @@
     let
       mkShell = system: nixpkgs.legacyPackages.${system}.mkShell {
         nativeBuildInputs = with nixpkgs.legacyPackages.${system}; [
-          nodejs_21
+          nodejs_20
           # pnpm: will be a global npm install
           fastfetch
         ];
